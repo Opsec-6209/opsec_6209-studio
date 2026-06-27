@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Opsec-6209/opencode-studio/main/assets/icon.ico" width="80" />
+  <img src="https://raw.githubusercontent.com/Opsec-6209/opsec_6209-studio/main/assets/icon.ico" width="80" />
   <h1>OpSec_6209 Studio</h1>
   <p>A modern, lightweight code editor powered by <strong>Monaco</strong> (VS Code's engine) with 80+ language support, AI assistant, integrated terminal, and a clean design aesthetic.</p>
 </div>
@@ -49,8 +49,8 @@
 
 ```bash
 # Clone
-git clone https://github.com/Opsec-6209/opencode-studio.git
-cd opencode-studio
+git clone https://github.com/Opsec-6209/opsec_6209-studio.git
+cd opsec_6209-studio
 
 # Install
 npm install
