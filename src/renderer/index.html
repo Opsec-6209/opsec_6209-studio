@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https:; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https:; worker-src 'self' blob:;" />
+  <title>OpenCode Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; background:#fafafa; }
+    #app { height:100%; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.__workerCache = {};
+    window.MonacoEnvironment = {
+      getWorker: function(workerId, label) {
+        if (window.__workerCache[label]) return window.__workerCache[label];
+        var map = { typescript:'ts', javascript:'ts', json:'json', css:'css', scss:'css', less:'css', html:'html', handlebars:'html', razor:'html' };
+        var name = map[label] || 'editor';
+        var path = './monacoeditorwork/' + name + '.worker.bundle.js';
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', path, false);
+          xhr.overrideMimeType('text/javascript');
+          xhr.send(null);
+          if (xhr.status === 200 && xhr.responseText) {
+            var blob = new Blob([xhr.responseText], { type: 'application/javascript' });
+            var url = URL.createObjectURL(blob);
+            var w = new Worker(url);
+            window.__workerCache[label] = w;
+            return w;
+          }
+        } catch(e) {
+          console.error('Monaco worker load failed for', label, e);
+        }
+        var fallback = new Worker(URL.createObjectURL(new Blob(['self.onmessage=function(){}'], {type:'text/javascript'})));
+        window.__workerCache[label] = fallback;
+        return fallback;
+      }
+    };
+  </script>
+  <script type="module" src="./index.tsx"></script>
+</body>
+</html>
