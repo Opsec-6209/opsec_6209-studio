@@ -58,7 +58,7 @@ export function App() {
   const handleOpenFolder = useCallback(async () => {
     await fileTree.openFolder();
     if (fileTree.rootPath) {
-      document.title = `${fileTree.rootPath.split(/[/\\]/).pop()} — OpenCode Studio`;
+      document.title = `${fileTree.rootPath.split(/[/\\]/).pop()} — OpSec_6209 Studio`;
     }
   }, [fileTree]);
 
@@ -179,7 +179,7 @@ export function App() {
       if (filePaths.length === 1 && firstInfo?.isDirectory) {
         await fileTree.openFolder(filePaths[0]);
         if (fileTree.rootPath) {
-          document.title = `${fileTree.rootPath.split(/[/\\]/).pop()} — OpenCode Studio`;
+          document.title = `${fileTree.rootPath.split(/[/\\]/).pop()} — OpSec_6209 Studio`;
         }
       } else {
         for (const p of filePaths) {
@@ -236,7 +236,7 @@ export function App() {
           background: 'linear-gradient(90deg, var(--accent), #c084fc, var(--accent)) 0 0 / 200% 100%',
           backgroundClip: 'text', WebkitBackgroundClip: 'text',
           color: 'transparent', animation: 'gradient-shift 3s infinite',
-        }}>OpenCode Studio</div>
+        }}>OpSec_6209 Studio</div>
         <div style=${{ marginTop: 16, color: 'var(--text-muted)', fontSize: 13 }}>Loading...</div>
         <div style=${{
           width: 200, height: 3, margin: '16px auto 0', borderRadius: 2,

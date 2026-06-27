@@ -80,7 +80,7 @@ export function buildMenu(win: BrowserWindow): Menu {
     {
       label: 'Help',
       submenu: [
-        { label: 'About OpenCode Studio', click: () => sendAction('help:about') },
+        { label: 'About OpSec_6209 Studio', click: () => sendAction('help:about') },
         { label: 'Toggle Developer Tools', accelerator: 'CmdOrCtrl+Shift+I', role: 'toggleDevTools' },
       ],
     },

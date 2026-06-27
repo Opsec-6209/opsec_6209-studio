@@ -40,7 +40,7 @@ function createWindow(): void {
     height: 900,
     minWidth: 800,
     minHeight: 500,
-    title: 'OpenCode Studio',
+    title: 'OpSec_6209 Studio',
     backgroundColor: '#fafafa',
     show: false,
     frame: false,

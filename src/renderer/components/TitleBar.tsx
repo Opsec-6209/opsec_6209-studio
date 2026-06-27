@@ -58,7 +58,7 @@ export function TitleBar({ zenMode }: TitleBarProps) {
         color: 'var(--text-muted)',
         letterSpacing: '0.02em',
       }}>
-        OpenCode Studio
+        OpSec_6209 Studio
       </div>
       <div style=${{
         display: 'flex',

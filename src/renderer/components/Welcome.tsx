@@ -51,7 +51,7 @@ export function Welcome({ onOpenFolder, onOpenFile, onNewFile, recentFiles, onOp
           backgroundImage: 'linear-gradient(90deg, var(--accent), #c084fc, var(--accent))',
           backgroundSize: '200% 100%', backgroundClip: 'text', WebkitBackgroundClip: 'text',
           color: 'transparent', animation: 'gradient-shift 6s infinite',
-        }}>OpenCode Studio</h1>
+        }}>OpSec_6209 Studio</h1>
 
         <p class="stagger-3" style=${{ color: 'var(--text-muted)', fontSize: 14, margin: '0 0 32px 0', lineHeight: 1.6 }}>
           A modern, lightweight code editor with syntax highlighting for 50+ languages, integrated terminal, AI assistant, and more.

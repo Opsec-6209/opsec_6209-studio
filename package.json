@@ -2,7 +2,7 @@
   "name": "opencode-studio",
   "version": "1.0.0",
   "description": "A modern code editor built with Monaco and Electron",
-  "author": "OpenCode Studio",
+  "author": "OpSec_6209",
   "main": "dist/main/main/main.js",
   "scripts": {
     "dev": "npm run build:main && concurrently \"npm run dev:renderer\" \"npm run dev:main\" \"wait-on dist/renderer/index.html && electron .\"",
@@ -37,7 +37,7 @@
   },
   "build": {
     "appId": "com.opencode.studio",
-    "productName": "OpenCode Studio",
+    "productName": "OpSec_6209 Studio",
     "directories": {
       "output": "dist-exe"
     },
